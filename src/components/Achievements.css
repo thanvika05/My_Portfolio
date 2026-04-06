@@ -1,0 +1,113 @@
+.achievements-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(121, 40, 202, 0.03) 50%, transparent 100%);
+}
+
+.achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ach-card {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ach-card--cyan:hover { box-shadow: var(--glow-cyan); border-color: rgba(0,210,255,0.3); }
+.ach-card--purple:hover { box-shadow: var(--glow-purple); border-color: rgba(121,40,202,0.3); }
+.ach-card--pink:hover { box-shadow: 0 0 30px rgba(255,0,128,0.25); border-color: rgba(255,0,128,0.3); }
+
+.ach-card__top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ach-card__emoji {
+  font-size: 2.2rem;
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ach-card__platform {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.ach-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ach-card__stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ach-card__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ach-card__stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ach-card__stat-value--cyan { color: var(--accent-cyan); }
+.ach-card__stat-value--purple { color: #9b59f5; }
+.ach-card__stat-value--pink { color: #ff4da6; }
+
+.ach-card__stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.ach-card__desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.ach-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.ach-card__link:hover { gap: 10px; opacity: 0.8; }
+
+@media (max-width: 900px) {
+  .achievements__grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .achievements__grid { grid-template-columns: repeat(2, 1fr); }
+  .achievements__grid > :last-child { grid-column: span 2; }
+}

@@ -1,0 +1,127 @@
+.projects-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 210, 255, 0.02) 50%, transparent 100%);
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+}
+
+.project-card__banner {
+  position: relative;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-card__banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.project-card__emoji {
+  font-size: 3.5rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.project-card__year {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,0.3);
+  padding: 4px 10px;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.project-card__body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.project-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project-card__subtitle {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-weight: 500;
+  margin-top: -6px;
+}
+
+.project-card__desc {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tech-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.18);
+  padding: 4px 10px;
+  border-radius: 100px;
+  transition: var(--transition);
+}
+
+.tech-badge:hover {
+  background: rgba(0, 210, 255, 0.15);
+}
+
+.project-card__links {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.project-card__link {
+  flex: 1;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .projects__grid { grid-template-columns: 1fr; }
+}
